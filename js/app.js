@@ -22,6 +22,10 @@
  * Define Global Variables
  * 
 */
+const myUl = document.getElementById("navbar__list");
+
+
+
 
 
 /**
@@ -39,6 +43,20 @@
 */
 
 // build the nav
+for(let i = 1; i <= 4; i++){
+    const myLi = document.createElement("li");
+    myLi.innerHTML = "Section " + i;
+    myLi.style.color = "black";
+    myUl.appendChild(myLi); 
+}
+ 
+
+
+
+
+
+
+
 
 
 // Add class 'active' to section when near top of viewport
