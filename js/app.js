@@ -44,20 +44,19 @@ const myUl = document.getElementById("navbar__list");
 
 // build the nav
 for(let i = 1; i <= 4; i++){
-    const myLi = document.createElement("li");
+    const myLi = document.createElement("li"); 
     myLi.innerHTML = "Section " + i;
     myLi.style.color = "black";
-    myUl.appendChild(myLi); 
+    myUl.appendChild(myLi);   
+    
+    myLi.addEventListener('click', function(){
+        document.location.href = '#section' + i;
+    });
+    
 }
  
 
-
-
-
-
-
-
-
+ 
 
 // Add class 'active' to section when near top of viewport
 

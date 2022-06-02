@@ -18,12 +18,12 @@ body {
     color: #fff;
 }
 
-
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
     margin: 2em 1rem;
+    text-align: center;
 }
 
 @media only screen and (min-width: 35em){
@@ -70,12 +70,19 @@ section {
     padding-right: 5em;
     margin: 0;
     text-align: right;
+    cursor: pointer;
+    
 }
 
 .navbar__menu li {
     display: inline-block;
     margin: 15px;
     
+}
+
+.navbar__menu li:hover{
+    background-color: #87cefa;
+    padding: 15px;
 }
 
 .navbar__menu .menu__link {
@@ -123,10 +130,41 @@ section {
     text-align: left;
 }
 
+.imgOne{
+    display: block;
+    margin-left: auto;
+    margin-right: 0%;
+    width: 50%;
+}
+
+.imgTwo{
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    width: 50%;
+}
+
+.imgThree{
+    display: block;
+    margin-left: auto;
+    margin-right: 0%;
+    width: 50%;
+}
+
+.imgFour{
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    width: 50%;
+}
+
 @media only screen and (min-width: 35em){
     .landing__container {
         max-width: 50em;
         padding: 4em;
+    }
+    .imgOne, .imgTwo, .imgThree, .imgFour{
+        max-width: 50em;
     }
 }
 
