@@ -52,11 +52,8 @@ for(let i = 1; i <= 4; i++){
     myLi.addEventListener('click', function(){
         document.location.href = '#section' + i;
     });
-    
 }
- 
-
- 
+  
 
 // Add class 'active' to section when near top of viewport
 
@@ -71,34 +68,93 @@ const secFour = document.getElementById("section4");
  * End Main Functions
  * Begin Events
  * 
-*/
-window.addEventListener('scroll', () =>{
+ * 
+ * 
+ * window.addEventListener('scroll', () => {
+    const scroll = window.scrollY;
+    console.log(scroll);
 
-    const scrolled = window.scrollY;
-    
-    switch(scrolled){
-        case 300:
+});
+ * 
+ * 
+ * const scrolled = window.scrollY;
+ *  
+ * const secO = {from: 0, to: 606};
+    const secT = {from:606, to:1415};
+    const secTT = {from: 1415, to:2302};
+    const secF = {from:2302, to: 3342};
+    const end = {from:3342, to:3614};
+
+    switch(scrollValue){
+        case secO:
             secOne.classList.add('active');
             break;
-        case 1400:
-            secOne.classList.remove('active');
+        case secT:
             secTwo.classList.add('active');
+            secOne.classList.remove('active');
             break;
-        case 2500:
-            secTwo.classList.remove('active');
+        case secTT:
             secThree.classList.add('active');
+            secTwo.classList.remove('active');
             break;
-        case 3800:
-            secThree.classList.remove('active');
+        case secF:
             secFour.classList.add('active');
+            secThree.classList.remove('active');
+            break;
+        case end:
+            secFour.classList.remove('active');
             break;
     }
 
+
+ * 
+ * 
+ * 
     
-});
+*/
+
+
+const onScroll = () => {
+    const scrollValue = document.documentElement.scrollTop;
+
+    if(scrollValue > 600 && scrollValue < 1400){
+        secOne.classList.add('active');
+    }else{
+        secOne.classList.remove('active');
+    }
+
+    if(scrollValue > 1400 && scrollValue < 2400){
+        secTwo.classList.add('active');
+    }else{
+        secTwo.classList.remove('active');
+    }
+
+    if(scrollValue > 2400 && scrollValue < 3400){
+        secThree.classList.add('active');
+    }else{
+        secThree.classList.remove('active');
+    }
+
+    if(scrollValue > 3400 && scrollValue < 3950){
+        secFour.classList.add('active');
+    }else{
+        secFour.classList.remove('active');
+    }
+
+    if(scrollValue > 3950 && scrollValue < 4150){
+        secFour.classList.remove('active');
+    }
+
+    
+    
+}
+window.addEventListener('scroll', onScroll);
+
+
 
 // Build menu 
 
 // Scroll to section on link click
 
 // Set sections as active
+
