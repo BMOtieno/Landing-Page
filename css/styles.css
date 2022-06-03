@@ -80,6 +80,7 @@ section {
     
 }
 
+
 .navbar__menu li:hover{
     background-color: #87cefa;
     padding: 15px;
@@ -130,42 +131,34 @@ section {
     text-align: left;
 }
 
-.imgOne{
+.imgOne, .imgTwo, .imgThree, .imgFour{
     display: block;
+    width: 50%;
+}
+
+.imgOne, .imgThree{
     margin-left: auto;
     margin-right: 0%;
-    width: 50%;
 }
 
-.imgTwo{
-    display: block;
-    margin-left: 0;
+.imgTwo, .imgFour{
+    margin-left: 0%;
     margin-right: auto;
-    width: 50%;
 }
 
-.imgThree{
-    display: block;
-    margin-left: auto;
-    margin-right: 0%;
-    width: 50%;
-}
-
-.imgFour{
-    display: block;
-    margin-left: 0;
-    margin-right: auto;
-    width: 50%;
-}
 
 @media only screen and (min-width: 35em){
     .landing__container {
         max-width: 50em;
         padding: 4em;
     }
-    .imgOne, .imgTwo, .imgThree, .imgFour{
+    .imgOne, .imgTwo, .imgThree, .imgFour {
         max-width: 50em;
+    } 
+    .page__footer{
+        flex-wrap: wrap;
     }
+    
 }
 
 section:nth-of-type(even) .landing__container {
