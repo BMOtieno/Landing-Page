@@ -8,12 +8,11 @@
  *
 */
 
-
 /* ---- Base Rules ---- */
 html {
     scroll-behavior: smooth;
-  }
-  
+}
+
 body {
     background: rgb(136, 203, 171);
     background: linear-gradient(0deg, rgb(18, 21, 190) 0%, rgba(0,13,60,1) 100%);
@@ -21,7 +20,6 @@ body {
     font-family: 'Merriweather', serif;
     color: #fff;
 }
-
 
 /* Typeography General*/
 h1 {
@@ -65,26 +63,20 @@ section {
     min-height: 80vh;
 }
 
-
-
 /* ---- Module Rules ---- */
-
 /* Navigation Styles*/
 .navbar__menu ul {
     padding-left: 1em;
     padding-right: 5em;
     margin: 0;
     text-align: right;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 
 .navbar__menu li {
     display: inline-block;
-    margin: 15px;
-    
+    margin: 15px;   
 }
-
 
 .navbar__menu li:hover{
     background-color: #87cefa;
@@ -96,8 +88,7 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
-   
+    color: #000; 
 }
 
 .navbar__menu .menu__link:hover {
@@ -128,7 +119,6 @@ section {
     color: #fff;
 }
 
-
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
 .landing__container {
@@ -151,7 +141,6 @@ section {
     margin-right: auto;
 }
 
-
 @media only screen and (min-width: 35em){
     .landing__container {
         max-width: 50em;
@@ -160,10 +149,6 @@ section {
     .imgOne, .imgTwo, .imgThree, .imgFour {
         max-width: 50em;
     } 
-    .page__footer{
-        flex-wrap: wrap;
-    }
-    
 }
 
 section:nth-of-type(even) .landing__container {
@@ -231,7 +216,6 @@ section:nth-of-type(3n + 1) .landing__container::after {
     opacity: 0;
     transition: ease 0.5s all;
 }
-
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
