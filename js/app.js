@@ -27,6 +27,7 @@ const secOne = document.getElementById("section1");
 const secTwo = document.getElementById("section2");
 const secThree = document.getElementById("section3");
 const secFour = document.getElementById("section4");
+const allSect = document.querySelectorAll("section");
 /**
  * End Global Variables
  * 
@@ -35,7 +36,7 @@ const secFour = document.getElementById("section4");
 
 // Build menu 
 // build the nav
-for(let i = 1; i <= 4; i++){
+for(let i = 1; i <= allSect.length; i++){
     const myLi = document.createElement("li"); 
     myLi.innerHTML = "Section " + i;
     myLi.style.color = "black";
@@ -49,42 +50,17 @@ for(let i = 1; i <= 4; i++){
 const onScroll = () => {
     //numerical value when user scrolls through the page
     const scrollValue = document.documentElement.scrollTop;
-
-    if(scrollValue > 600 && scrollValue < 1400){
-        // Set sections as active
-        secOne.classList.add('active');
-    }else{
-        secOne.classList.remove('active');
-    }
-
-    if(scrollValue > 1400 && scrollValue < 2400){
-        // Set sections as active
-        secTwo.classList.add('active');
-    }else{
-        secTwo.classList.remove('active');
-    }
-
-    if(scrollValue > 2400 && scrollValue < 3400){
-        // Set sections as active
-        secThree.classList.add('active');
-    }else{
-        secThree.classList.remove('active');
-    }
-
-    if(scrollValue > 3400 && scrollValue < 3950){
-        // Set sections as active
-        secFour.classList.add('active');
-    }else{
-        secFour.classList.remove('active');
-    }
-
-    if(scrollValue > 3950 && scrollValue < 4150){
-        secFour.classList.remove('active');
-    }   
+    // Set sections as active
+    (scrollValue > 240 && scrollValue < 900) ? secOne.classList.add('your-active-class') : secOne.classList.remove('your-active-class');
+    (scrollValue > 900 && scrollValue < 1710) ? secTwo.classList.add('your-active-class') : secTwo.classList.remove('your-active-class');
+    (scrollValue > 1710 && scrollValue < 2800) ? secThree.classList.add('your-active-class'): secThree.classList.remove('your-active-class');
+    (scrollValue > 2800 && scrollValue < 4260) ? secFour.classList.add('your-active-class') : secFour.classList.remove('your-active-class');
 }
 
 // Scroll to anchor ID using scrollTO event
 window.addEventListener('scroll', onScroll);
+
+
 
 
 
