@@ -22,12 +22,14 @@
  * Define Global Variables
  * 
 */
+
 const myUl = document.getElementById("navbar__list");
 const secOne = document.getElementById("section1");
 const secTwo = document.getElementById("section2");
 const secThree = document.getElementById("section3");
 const secFour = document.getElementById("section4");
 const allSect = document.querySelectorAll("section");
+
 /**
  * End Global Variables
  * 
@@ -36,36 +38,51 @@ const allSect = document.querySelectorAll("section");
 
 // Build menu 
 // build the nav
-
+//build navigation dynamically
 for(let i = 1; i <= allSect.length; i++){
     const myLi = document.createElement("li"); 
-    myLi.innerHTML = "Section " + i;
+    myLi.className = "section" + i;
+    const anchor = document.createElement("a");
+    anchor.href = "#section" + i;
+    anchor.innerText = "Section " + i;
+    myLi.appendChild(anchor);
     myUl.appendChild(myLi);   
-    // Scroll to section on link click
-    myLi.addEventListener("click", () => {
-        document.location.href = "#section" + i;
+
+    //set a smooth scrolling behavior when user clicks on the navbar
+    anchor.addEventListener("click", (e) => {
+        e.preventDefault();
+        const aHref = anchor.getAttribute("href");
+        const topOfSec = document.querySelector(aHref).offsetTop;
+        
+        scroll({
+            top: topOfSec,
+            behavior: "smooth"
+        })
     });
 }
 
-const onScroll = () => {
-    //numerical value when user scrolls through the page
-    const scrollValue = document.documentElement.scrollTop;
-    // Set sections as active
-    (scrollValue > 240 && scrollValue < 900) ? secOne.classList.add("your-active-class") : secOne.classList.remove("your-active-class");
-    (scrollValue > 900 && scrollValue < 1710) ? secTwo.classList.add("your-active-class") : secTwo.classList.remove("your-active-class");
-    (scrollValue > 1710 && scrollValue < 2800) ? secThree.classList.add("your-active-class"): secThree.classList.remove("your-active-class");
-    (scrollValue > 2800 && scrollValue < 4260) ? secFour.classList.add("your-active-class") : secFour.classList.remove("your-active-class");
-}
+//contains the elements in the navbar list
+let child_nodes = myUl.childNodes;
 
-// Scroll to anchor ID using scrollTO event
-window.addEventListener("scroll", onScroll);
+//event listener to highlight on the narbar when the user scrolls through the page
+window.addEventListener("scroll", () => {
+    let currentSection = "";
+    
+    allSect.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
 
+        if(window.scrollY >= (sectionTop - sectionHeight / 3)){
+            currentSection = section.getAttribute("id");
+        }
+    });
 
-
-
-
-
-
-
+    child_nodes.forEach(li => {
+       li.classList.remove("active");
+       if(li.classList.contains(currentSection)){
+           li.classList.add("active");
+        }
+   });
+});
 
 

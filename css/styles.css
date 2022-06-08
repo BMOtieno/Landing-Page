@@ -62,25 +62,40 @@ section {
 
 /* ---- Module Rules ---- */
 /* Navigation Styles*/
-.navbar__menu ul {
-    padding-left: 1em;
-    padding-right: 5em;
+
+.navbar__menu ul li{
+    display: inline-block;
+    padding: 10px 20px;
     margin: 0;
-    text-align: right;
-    cursor: pointer;   
+    cursor: pointer; 
 }
 
-.navbar__menu li {
-    display: inline-block;
+.navbar__menu ul {
+    text-align: right;
+}
+
+.navbar__menu li a {
     margin: 15px;   
     color: #000;
+    text-decoration: none;
+    
 }
 
-.navbar__menu li:hover{
+.navbar__menu li a:hover {
     background-color: black;
     color: #eee;
-    padding: 15px;
+    padding: 10px;
     transition: ease 0.3s all;
+}
+
+.navbar__menu li.active {
+    background-color: black;
+    padding: 10px;
+    transition: ease 0.3s all;
+}
+
+.navbar__menu li.active a {
+    color: #eee;
 }
 
 /* Header Styles */
