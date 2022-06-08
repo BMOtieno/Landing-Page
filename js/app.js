@@ -64,7 +64,6 @@ for(let i = 1; i <= allSect.length; i++){
 //contains the elements in the navbar list
 let child_nodes = myUl.childNodes;
 
-//event listener to highlight on the narbar when the user scrolls through the page
 window.addEventListener("scroll", () => {
     let currentSection = "";
     
@@ -76,13 +75,20 @@ window.addEventListener("scroll", () => {
             currentSection = section.getAttribute("id");
         }
     });
-
+    //highlights on the narbar when the user scrolls through the page
     child_nodes.forEach(li => {
        li.classList.remove("active");
        if(li.classList.contains(currentSection)){
            li.classList.add("active");
         }
    });
+    //add 'your-active-class' on each section while scrolling
+    allSect.forEach(section => {
+        section.classList.remove("your-active-class");
+        if(section.id === currentSection){
+            section.classList.add("your-active-class");
+        }
+    });
 });
 
 

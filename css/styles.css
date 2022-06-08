@@ -91,7 +91,6 @@ section {
 .navbar__menu li.active {
     background-color: black;
     padding: 10px;
-    transition: ease 0.3s all;
 }
 
 .navbar__menu li.active a {
